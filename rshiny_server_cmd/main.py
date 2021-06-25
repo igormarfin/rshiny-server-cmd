@@ -18,6 +18,8 @@ def get_server_conf(command, port):
 
         preserve_logs true;
         
+        disable_protocols xdr-streaming xhr-streaming iframe-eventsource iframe-htmlfile;
+        
         server {{
             listen {port};
             location / {{
