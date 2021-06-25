@@ -17,8 +17,17 @@ def get_server_conf(command, port):
         run_as {user};
 
         preserve_logs true;
+                
+        disable_protocols websocket xdr-streaming xhr-streaming iframe-eventsource iframe-htmlfile xdr-polling iframe-xhr-polling jsonp-polling;
         
-        disable_protocols xdr-streaming xhr-streaming iframe-eventsource iframe-htmlfile;
+
+
+
+
+
+
+
+
         
         server {{
             listen {port};
