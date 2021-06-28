@@ -23,10 +23,8 @@ def get_server_conf(command, port):
         server {{
             listen {port};
             location / {{
-                app_session_timeout 900;
                 app_init_timeout 900;
                 app_idle_timeout 0;
-                app_idle_timeout
                 app_dir {site_dir};
                 log_dir {site_dir}/logs;
                 bookmark_state_dir {site_dir}/bookmarks;
