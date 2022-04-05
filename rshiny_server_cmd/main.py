@@ -22,13 +22,10 @@ def get_server_conf(command, port):
         
         server {{
             listen {port};
-            app_session_timeout 86400;       # close idle connection in seconds
-            app_idle_timeout 86400;        # close idle R process in seconds
-            app_init_timeout 86400;          # cancel startup in seconds
     
             location / {{
-                app_init_timeout 86400;
-                app_idle_timeout 86400;
+                app_init_timeout 900;
+                app_idle_timeout 0;
                 app_dir {site_dir};
                 log_dir {site_dir}/logs;
                 bookmark_state_dir {site_dir}/bookmarks;
